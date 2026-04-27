@@ -82,18 +82,18 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0d0d0d] font-body text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#f7f7f2] font-body text-[#1a2010] overflow-x-hidden">
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4"
-        style={{ background: "rgba(13,13,13,0.85)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(163,230,53,0.1)" }}>
+        style={{ background: "rgba(247,247,242,0.9)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(163,230,53,0.1)" }}>
         <button onClick={() => scrollTo("home")} className="font-display text-2xl font-bold tracking-widest neon-text neon-text-glow">
           FLORA
         </button>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map(l => (
             <button key={l.id} onClick={() => scrollTo(l.id)}
-              className={`font-display text-sm tracking-widest uppercase transition-all duration-300 ${activeSection === l.id ? "neon-text neon-text-glow" : "text-white/60 hover:text-white"}`}>
+              className={`font-display text-sm tracking-widest uppercase transition-all duration-300 ${activeSection === l.id ? "neon-text neon-text-glow" : "text-[#1a2010]/60 hover:text-[#1a2010]"}`}>
               {l.label}
             </button>
           ))}
@@ -108,7 +108,7 @@ export default function Index() {
 
       {/* MOBILE MENU */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8" style={{ background: "rgba(13,13,13,0.97)", backdropFilter: "blur(20px)" }}>
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-8" style={{ background: "rgba(247,247,242,0.98)", backdropFilter: "blur(20px)" }}>
           {navLinks.map(l => (
             <button key={l.id} onClick={() => scrollTo(l.id)}
               className="font-display text-3xl tracking-widest uppercase neon-text neon-text-glow">
@@ -146,7 +146,7 @@ export default function Index() {
               <span className="neon-text neon-text-glow">ПРИРОДА</span><br />
               В ТВОЁМ<br />ДОМЕ
             </h1>
-            <p className="text-white/50 font-body text-lg leading-relaxed mb-8 max-w-md animate-fade-up delay-200"
+            <p className="text-[#1a2010]/50 font-body text-lg leading-relaxed mb-8 max-w-md animate-fade-up delay-200"
               style={{ animationFillMode: "forwards" }}>
               Отборные растения из питомников. Упаковка гарантирует сохранность при доставке.
             </p>
@@ -156,8 +156,8 @@ export default function Index() {
                 Смотреть каталог
               </button>
               <button onClick={() => scrollTo("contacts")}
-                className="px-8 py-4 font-display font-bold text-lg tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-white/10"
-                style={{ border: "1px solid rgba(255,255,255,0.2)", color: "white" }}>
+                className="px-8 py-4 font-display font-bold text-lg tracking-widest uppercase rounded-full transition-all duration-300 hover:bg-black/10"
+                style={{ border: "1px solid rgba(0,0,0,0.15)", color: "#1a2010" }}>
                 Связаться с нами
               </button>
             </div>
@@ -165,7 +165,7 @@ export default function Index() {
               {[["500+", "Видов растений"], ["24ч", "Доставка"], ["98%", "Довольных клиентов"]].map(([val, label]) => (
                 <div key={val}>
                   <div className="font-display text-2xl font-bold neon-text">{val}</div>
-                  <div className="text-white/40 text-xs font-body">{label}</div>
+                  <div className="text-[#1a2010]/40 text-xs font-body">{label}</div>
                 </div>
               ))}
             </div>
@@ -176,12 +176,12 @@ export default function Index() {
               <img src={PLANT_IMAGE} alt="Растение" className="w-full h-full object-cover rounded-3xl"
                 style={{ border: "1px solid rgba(163,230,53,0.2)" }} />
               <div className="absolute -bottom-4 -left-4 px-4 py-3 rounded-2xl card-dark neon-border border">
-                <div className="text-xs text-white/50 font-body">Монстера Делициоза</div>
+                <div className="text-xs text-[#1a2010]/50 font-body">Монстера Делициоза</div>
                 <div className="font-display font-bold neon-text text-lg">3 200 ₽</div>
               </div>
               <div className="absolute -top-4 -right-4 px-4 py-3 rounded-2xl card-dark neon-border border flex items-center gap-2">
                 <Icon name="Leaf" size={16} className="neon-text" />
-                <span className="text-xs font-body text-white/70">Живая гарантия</span>
+                <span className="text-xs font-body text-[#1a2010]/70">Живая гарантия</span>
               </div>
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Index() {
       <div className="py-4 overflow-hidden" style={{ borderTop: "1px solid rgba(163,230,53,0.1)", borderBottom: "1px solid rgba(163,230,53,0.1)", background: "rgba(163,230,53,0.03)" }}>
         <div className="flex animate-marquee whitespace-nowrap gap-12">
           {[...marqueeTags, ...marqueeTags].map((tag, i) => (
-            <span key={i} className="font-display text-sm tracking-widest text-white/30 uppercase px-6">{tag}</span>
+            <span key={i} className="font-display text-sm tracking-widest text-[#1a2010]/40 uppercase px-6">{tag}</span>
           ))}
         </div>
       </div>
@@ -205,61 +205,61 @@ export default function Index() {
               <div className="font-body text-xs tracking-widest uppercase neon-text mb-2">Каталог</div>
               <h2 className="font-display text-5xl md:text-6xl font-bold leading-none">ВЫБЕРИ<br /><span className="neon-text">СВОЁ</span></h2>
             </div>
-            <div className="text-white/40 font-body text-sm">
+            <div className="text-[#1a2010]/40 font-body text-sm">
               Найдено: <span className="neon-text font-bold text-base">{filtered.length}</span> растений
             </div>
           </div>
 
           {/* FILTERS */}
           <div className="rounded-2xl p-6 mb-10 card-dark space-y-5">
-            <div className="flex items-center gap-2 text-white/60 font-body text-sm mb-1">
+            <div className="flex items-center gap-2 text-[#1a2010]/60 font-body text-sm mb-1">
               <Icon name="SlidersHorizontal" size={14} />
               <span>Фильтры</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div>
-                <div className="text-xs text-white/40 font-body mb-2 uppercase tracking-wider">Вид</div>
+                <div className="text-xs text-[#1a2010]/40 font-body mb-2 uppercase tracking-wider">Вид</div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(typeLabels).map(([val, label]) => (
                     <button key={val} onClick={() => setFilterType(val)}
-                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterType === val ? "neon-bg text-black font-semibold" : "text-white/50 hover:text-white"}`}
-                      style={filterType !== val ? { border: "1px solid rgba(255,255,255,0.1)" } : {}}>
+                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterType === val ? "neon-bg text-black font-semibold" : "text-[#1a2010]/50 hover:text-[#1a2010]"}`}
+                      style={filterType !== val ? { border: "1px solid rgba(0,0,0,0.08)" } : {}}>
                       {label}
                     </button>
                   ))}
                 </div>
               </div>
               <div>
-                <div className="text-xs text-white/40 font-body mb-2 uppercase tracking-wider">Размер</div>
+                <div className="text-xs text-[#1a2010]/40 font-body mb-2 uppercase tracking-wider">Размер</div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(sizeLabels).map(([val, label]) => (
                     <button key={val} onClick={() => setFilterSize(val)}
-                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterSize === val ? "neon-bg text-black font-semibold" : "text-white/50 hover:text-white"}`}
-                      style={filterSize !== val ? { border: "1px solid rgba(255,255,255,0.1)" } : {}}>
+                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterSize === val ? "neon-bg text-black font-semibold" : "text-[#1a2010]/50 hover:text-[#1a2010]"}`}
+                      style={filterSize !== val ? { border: "1px solid rgba(0,0,0,0.08)" } : {}}>
                       {label}
                     </button>
                   ))}
                 </div>
               </div>
               <div>
-                <div className="text-xs text-white/40 font-body mb-2 uppercase tracking-wider">Освещение</div>
+                <div className="text-xs text-[#1a2010]/40 font-body mb-2 uppercase tracking-wider">Освещение</div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(lightLabels).map(([val, label]) => (
                     <button key={val} onClick={() => setFilterLight(val)}
-                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterLight === val ? "neon-bg text-black font-semibold" : "text-white/50 hover:text-white"}`}
-                      style={filterLight !== val ? { border: "1px solid rgba(255,255,255,0.1)" } : {}}>
+                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterLight === val ? "neon-bg text-black font-semibold" : "text-[#1a2010]/50 hover:text-[#1a2010]"}`}
+                      style={filterLight !== val ? { border: "1px solid rgba(0,0,0,0.08)" } : {}}>
                       {label}
                     </button>
                   ))}
                 </div>
               </div>
               <div>
-                <div className="text-xs text-white/40 font-body mb-2 uppercase tracking-wider">Полив</div>
+                <div className="text-xs text-[#1a2010]/40 font-body mb-2 uppercase tracking-wider">Полив</div>
                 <div className="flex flex-wrap gap-2">
                   {Object.entries(waterLabels).map(([val, label]) => (
                     <button key={val} onClick={() => setFilterWater(val)}
-                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterWater === val ? "neon-bg text-black font-semibold" : "text-white/50 hover:text-white"}`}
-                      style={filterWater !== val ? { border: "1px solid rgba(255,255,255,0.1)" } : {}}>
+                      className={`px-3 py-1 rounded-full font-body text-xs transition-all duration-200 ${filterWater === val ? "neon-bg text-black font-semibold" : "text-[#1a2010]/50 hover:text-[#1a2010]"}`}
+                      style={filterWater !== val ? { border: "1px solid rgba(0,0,0,0.08)" } : {}}>
                       {label}
                     </button>
                   ))}
@@ -268,17 +268,17 @@ export default function Index() {
             </div>
             <div>
               <div className="flex justify-between items-center mb-2">
-                <div className="text-xs text-white/40 font-body uppercase tracking-wider">Цена до</div>
+                <div className="text-xs text-[#1a2010]/40 font-body uppercase tracking-wider">Цена до</div>
                 <div className="font-display font-bold neon-text text-lg">{priceMax.toLocaleString()} ₽</div>
               </div>
               <input type="range" min={500} max={6000} step={100} value={priceMax} onChange={e => setPriceMax(Number(e.target.value))}
                 className="w-full h-1 rounded-full appearance-none cursor-pointer"
-                style={{ accentColor: "#a3e635", background: `linear-gradient(to right, #a3e635 0%, #a3e635 ${((priceMax - 500) / 5500) * 100}%, rgba(255,255,255,0.1) ${((priceMax - 500) / 5500) * 100}%, rgba(255,255,255,0.1) 100%)` }} />
+                style={{ accentColor: "#4d9400", background: `linear-gradient(to right, #4d9400 0%, #4d9400 ${((priceMax - 500) / 5500) * 100}%, rgba(0,0,0,0.08) ${((priceMax - 500) / 5500) * 100}%, rgba(0,0,0,0.08) 100%)` }} />
             </div>
           </div>
 
           {filtered.length === 0 ? (
-            <div className="text-center py-20 text-white/30 font-body">
+            <div className="text-center py-20 text-[#1a2010]/30 font-body">
               <Icon name="Leaf" size={48} className="mx-auto mb-4 opacity-20" />
               <p className="text-lg">Ничего не найдено. Измените фильтры.</p>
             </div>
@@ -294,15 +294,15 @@ export default function Index() {
                   )}
                   <div className="relative overflow-hidden h-52">
                     <img src={plant.img} alt={plant.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(13,13,13,0.8) 0%, transparent 60%)" }} />
+                    <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(247,247,242,0.6) 0%, transparent 60%)" }} />
                   </div>
                   <div className="p-4">
                     <h3 className="font-display font-semibold text-base mb-1 leading-tight">{plant.name}</h3>
                     <div className="flex flex-wrap gap-1.5 mb-3">
-                      <span className="px-2 py-0.5 rounded-full text-xs font-body text-white/40" style={{ background: "rgba(255,255,255,0.06)" }}>
+                      <span className="px-2 py-0.5 rounded-full text-xs font-body text-[#1a2010]/40" style={{ background: "rgba(0,0,0,0.06)" }}>
                         {sizeLabels[plant.size]}
                       </span>
-                      <span className="px-2 py-0.5 rounded-full text-xs font-body text-white/40" style={{ background: "rgba(255,255,255,0.06)" }}>
+                      <span className="px-2 py-0.5 rounded-full text-xs font-body text-[#1a2010]/40" style={{ background: "rgba(0,0,0,0.06)" }}>
                         {lightLabels[plant.light]}
                       </span>
                     </div>
@@ -323,7 +323,7 @@ export default function Index() {
 
       {/* REVIEWS */}
       <section id="reviews" className="py-24 px-6 md:px-12 relative" ref={setRef("reviews") as React.RefCallback<HTMLElement>}
-        style={{ background: "rgba(163,230,53,0.02)", borderTop: "1px solid rgba(163,230,53,0.08)", borderBottom: "1px solid rgba(163,230,53,0.08)" }}>
+        style={{ background: "rgba(163,230,53,0.05)", borderTop: "1px solid rgba(163,230,53,0.08)", borderBottom: "1px solid rgba(163,230,53,0.08)" }}>
         <div className={`transition-all duration-700 ${visible["reviews"] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <div className="mb-12">
             <div className="font-body text-xs tracking-widest uppercase neon-text mb-2">Отзывы</div>
@@ -348,7 +348,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <p className="text-white/60 font-body text-sm leading-relaxed">"{r.text}"</p>
+                <p className="text-[#1a2010]/60 font-body text-sm leading-relaxed">"{r.text}"</p>
               </div>
             ))}
           </div>
@@ -367,11 +367,11 @@ export default function Index() {
               <h3 className="font-display text-xl font-semibold mb-6 tracking-wide">Оставить заявку</h3>
               <div className="space-y-4">
                 <input type="text" placeholder="Ваше имя"
-                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 outline-none focus:border-[#a3e635] transition-colors" />
+                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-[#1a2010] placeholder-[#1a2010]/30 bg-black/5 border border-black/10 outline-none focus:border-[#4d9400] transition-colors" />
                 <input type="tel" placeholder="Телефон"
-                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 outline-none focus:border-[#a3e635] transition-colors" />
+                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-[#1a2010] placeholder-[#1a2010]/30 bg-black/5 border border-black/10 outline-none focus:border-[#4d9400] transition-colors" />
                 <textarea placeholder="Что вас интересует?" rows={4}
-                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-white placeholder-white/30 bg-white/5 border border-white/10 outline-none focus:border-[#a3e635] transition-colors resize-none" />
+                  className="w-full px-4 py-3 rounded-xl font-body text-sm text-[#1a2010] placeholder-[#1a2010]/30 bg-black/5 border border-black/10 outline-none focus:border-[#4d9400] transition-colors resize-none" />
                 <button className="w-full py-4 neon-bg text-black font-display font-bold text-base tracking-widest uppercase rounded-xl transition-all hover:opacity-90 neon-glow">
                   Отправить заявку
                 </button>
@@ -390,9 +390,9 @@ export default function Index() {
                     <Icon name={item.icon as "MapPin"} size={18} className="neon-text" />
                   </div>
                   <div>
-                    <div className="text-xs text-white/40 font-body uppercase tracking-widest mb-0.5">{item.title}</div>
+                    <div className="text-xs text-[#1a2010]/40 font-body uppercase tracking-widest mb-0.5">{item.title}</div>
                     <div className="font-display font-semibold text-base">{item.val}</div>
-                    <div className="text-xs text-white/40 font-body mt-0.5">{item.sub}</div>
+                    <div className="text-xs text-[#1a2010]/40 font-body mt-0.5">{item.sub}</div>
                   </div>
                 </div>
               ))}
@@ -405,10 +405,10 @@ export default function Index() {
       <footer className="px-6 md:px-12 py-8 flex flex-col md:flex-row items-center justify-between gap-4"
         style={{ borderTop: "1px solid rgba(163,230,53,0.1)" }}>
         <div className="font-display text-xl font-bold tracking-widest neon-text neon-text-glow">FLORA</div>
-        <div className="text-white/30 font-body text-xs text-center">© 2024 FLORA. Живые растения с гарантией.</div>
+        <div className="text-[#1a2010]/40 font-body text-xs text-center">© 2024 FLORA. Живые растения с гарантией.</div>
         <div className="flex gap-6">
           {["Instagram", "MessageCircle", "Send"].map(icon => (
-            <button key={icon} className="text-white/30 hover:neon-text transition-colors duration-200">
+            <button key={icon} className="text-[#1a2010]/40 hover:neon-text transition-colors duration-200">
               <Icon name={icon as "Instagram"} size={18} />
             </button>
           ))}
